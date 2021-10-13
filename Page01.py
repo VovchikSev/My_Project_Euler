@@ -1,25 +1,85 @@
+
 """
+05
+2520 - самое маленькое число, которое делится без остатка на все числа от 1 до 10.
+
+Какое самое маленькое число делится нацело на все числа от 1 до 20?
+https://www.cyberforum.ru/python-beginners/thread2456814.html
+"""
+# Разобрать этот вариант
+# n=20
+# i=19
+# while i>0:
+#   if n%i==0:
+#       i-=1
+#   else:
+#       n+=20
+#       i=19
+#   if i==1:
+#     print (n)
+
+c = 0
+e = 0
+while c != 20:
+    c = 0
+    e += 2520
+    for i in range(1,21):
+        if e % i == 0:
+            c += 1
+print(e)
+
+
+"""
+04
+Число-палиндром с обеих сторон (справа налево и слева направо) читается одинаково.
+Самое большое число-палиндром, полученное умножением двух двузначных чисел – 9009 = 91 × 99.
+
+Найдите самый большой палиндром, полученный умножением двух трехзначных чисел.
+"""
+
+
+# def is_palindrome(int_str) -> bool:
+#     # i = 0
+#     # j = len(int_str) - 1
+#     # while i < j:
+#     #     if int_str[i] != int_str[j]:
+#     #         return False
+#     #     i +=1
+#     #     j -= 1
+#     # return True
+#     # так короче :)
+#     return int_str == int(str(int_str)[::-1])
+
+
+# max_palindrome = 0
+# min_value = 100
+# max_value = 1000
+#
+# for i in range(min_value, max_value):
+#     for j in range(i, max_value):
+#         current = i * j
+#         if is_palindrome(current):
+#             max_palindrome = current if max_palindrome < current else max_palindrome
+#
+# print(max_palindrome)
+
+"""
+03
 Простые делители числа 13195 - это 5, 7, 13 и 29.
 Каков самый большой делитель числа 600 851 475 143, являющийся простым числом?
+6857
 """
-in_data = 600851475143
-max_del = 0
-
-
-def check_prime_factor(delimit) -> bool:
-    k = 0
-
-    for i in range(2, delimit // 2 + 1):
-        if delimit % i == 0:
-            k += 1
-
-    return k == 0
-
-
-for ch in range(2, in_data // 2 + 1):
-    if in_data % ch == 0 and check_prime_factor(ch):
-        print(ch)
-        max_del = ch
+# num = 600851475143
+# count = 2
+# while 1:
+#
+#     if num % count == 0:
+#         print(count)
+#         num /= count
+#         if num == 1:
+#             print(count)
+#             break
+#     count += 1
 
 """
 02
